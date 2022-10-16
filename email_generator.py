@@ -13,7 +13,7 @@ class EmailGenerator:
         self.EMAIL_KEY_LABEL = 'KEY_POINTS_LABEL'
         self.API_URL = "https://api.rytr.me/v1"
 
-    def acquire_email(self):
+    def acquire_email(self, theme):
         usecase = UseCases.get(id=self.USE_CASE_ID_EMAIL)
         usecase = usecase["data"]
 
@@ -23,7 +23,7 @@ class EmailGenerator:
             tone_id=self.TONE_ID_CONVINCING,
             usecase_id=usecase["_id"],
             input_contexts={
-                usecase["contextInputs"][0]["keyLabel"]: "late assignment\napology\nhospital",
+                usecase["contextInputs"][0]["keyLabel"]: "late assignment\napology\n" + theme,
             },
             format="html",
         )

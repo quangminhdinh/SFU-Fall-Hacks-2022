@@ -7,7 +7,14 @@ evidence_gen = EvidenceGenerator()
 email_gen = EmailGenerator()
 
 @app.route("/")
-def hello_world():
-    # output_url = evidence_gen.acquire_evidence()
-    # return "<img src='" + output_url + "'/>"
+def index():
     return render_template("index.html")
+
+@app.route("/email/<theme>", methods=["GET"])
+def email(theme):
+    return email_gen.acquire_email(theme)
+
+@app.route("/evidence/<theme>", methods=["GET"])
+def evidence(theme):
+    output_url = evidence_gen.acquire_evidence(theme)
+    return output_url
