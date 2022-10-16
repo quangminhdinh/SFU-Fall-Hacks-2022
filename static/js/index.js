@@ -13,6 +13,7 @@ window.onload = function(){
     let theme = ""
 
     // Slider logic
+    /*
     slider.addEventListener('input', function(){
         if (slider.value == "1"){
             theme_displayer.innerHTML = "Please Choose a theme"
@@ -34,6 +35,7 @@ window.onload = function(){
             theme = "Death"
         }
     })
+    */
 
 
     // Generates email
@@ -50,10 +52,8 @@ window.onload = function(){
 
     evidence_btn.addEventListener('click', function(){
         // Frontend logic
-        if (theme != ""){
-            $('html, body').animate({ scrollTop: $("#evidence-area").offset().top}, 'fast');
-            evidence_img.classList.add("evidence-img-active")
-        }
+        $('html, body').animate({ scrollTop: $("#evidence-area").offset().top}, 'fast');
+        evidence_img.classList.add("evidence-img-active")
 
 
        

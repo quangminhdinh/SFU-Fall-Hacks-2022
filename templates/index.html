@@ -17,30 +17,32 @@
         <section class = "btn-theme-container">
             <h2>Choose theme</h2>
             <section class = "range-container">
-                <input type="range" value="1" id = "range-slider" min = "1" max = "5">
+                <!-- <input type="range" value="1" id = "range-slider" min = "1" max = "5"> -->
+
+                <input type='text' id='theme' placeholder="text here (E.g. hospital)"/>
             </section>
             <h2 id = "theme-displayer">Please Choose a theme</h2>
-            <button class = "generate-btn" id = "email_button">Generate Email </button>
+            <button class = "generate-btn" onclick="getTheme()" id = "email_button">Generate Email </button>
         </section>
         <section class = "email-container" id = "email-area">
+            
             <section class = "email-box">
-                <h1>Hey Prof, </h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p id="email"></p>
 
             </section>
         </section>
         <section class = "btn-evidence-container">
-            <button class = "generate-btn" id = "evidence-btn">Generate Evidence</button>
-        </section>
+            <button class = "generate-btn" onclick="getEvidence()" id = "evidence-btn">Generate Evidence</button>
+        </section><p>Please wait for about 20 sec</p>
         <section class = "evidence-container" id = "evidence-area">
             <img src="/assets/stock.jpeg" alt="" id = "evidence-img">
 
 
         </section>
-
+        <p>Please wait for about 20 sec</p>
     </main>
 
 
-    
+    <script src = "{{url_for('static', filename='js/theme.js')}}"></script>
 </body>
 </html>
