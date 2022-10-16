@@ -18,3 +18,6 @@ def email(theme):
 def evidence():
     output_url = evidence_gen.acquire_evidence(request.get_data().decode('utf-8'))
     return "data:image/gif;base64," + output_url.decode('utf-8')
+
+if __name__ == '__main__':
+    app.run(debug=True)
